@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+security:
+  basic:
+    enable: false
+
+spring:
+  datasource:
+    url : jdbc:h2:mem:test
+    driverClassName: org.h2.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect : org.hibernate.dialect.H2Dialect
+        show_sql: true
+        ddl-auto: create
+        hibernate:
+          ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+
+d2d:
+  center:
+    latitude: 52.53
+    longitude: 13.403
+    activeDistance: 3500

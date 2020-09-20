@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: VEHICLE_SERVICE
+
+  cloud:
+    kubernetes:
+      reload:
+        enabled: true

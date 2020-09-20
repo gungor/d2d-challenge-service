@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+security:
+  basic:
+    enable: false
+
+spring:
+  datasource:
+    url : jdbc:postgresql://ec2-52-72-34-184.compute-1.amazonaws.com:5432/ddkhl01smb7vr
+    driverClassName: org.postgresql.Driver
+    username: pwmxakiusprbrn
+    password: 65cfdf46fe3d9cbd2f6a8b533d1188e418a97464c352c74df8803301ce175655
+  jpa:
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+
+      hibernate:
+        default_schema: public
+        dialect : org.hibernate.dialect.PostgreSQLDialect
+        show_sql: false
+        generate_statistics: false
+        ddl-auto: create-drop
+        hibernate:
+          ddl-auto: create-drop
+
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+
+
+
+d2d:
+  center:
+    latitude: 52.53
+    longitude: 13.403
+    activeDistance: 3500
+
+
