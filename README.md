@@ -9,8 +9,7 @@ This service provides API for the functions as below.
 * Vehicle Deregistration: Vehicles are removed from system and their location updates do not take effect
 
 API for frontend
-* Vehicle Query: Query vehicles inside an area regarding their locations
-* Vehicle Query by id : Query a vehicle with registered UUID in order to retrieve its previous locations 
+* Vehicle Query: Query vehicles inside an area regarding their locations 
 
 API for testing purposes
 * Table Truncation: In order to start test from scratch this function provided to truncate all application tables 
@@ -38,6 +37,7 @@ Additional Libraries
 
 ## APIs
 
+### Vehicle Registration
 `POST /vehicles`
 Vehicle is recorded with UUID.
 One row inserted in VEHICLE table.
@@ -73,6 +73,7 @@ Response example : HTTP 500 / Internal server error
 
 * Since abc123 used as an example on challenge page there is no validation for UUID format
 
+### Vehicle Location Update
 `POST /vehicles/:id/locations`
 Vehicle location is received and recorded
 One row inserted in LOCATION table.
@@ -103,6 +104,8 @@ Response example : HTTP 500 / Internal server error
 { "errorDescription" : "error message will be here" }
 ```
 
+### Vehicle Deregistration
+
 `DELETE /vehicles/:id`
 Vehicle and its locations are deleted
 One row is deleted from VEHICLE table.
@@ -124,6 +127,8 @@ Response example : HTTP 500 / Internal server error
 ```json
 { "errorDescription" : "error message will be here" }
 ```
+
+### Vehicle Query
 
 `GET /vehicles/{northEastLat}/{northEastLng}/{southWestLat}/{southWestLng}`
 Retrieves registered vehicles inside this area and not away from 3.5km to the center(lat: 52.53, lng: 13.403)
@@ -168,13 +173,14 @@ Response example : HTTP 500 / Internal server error
 
 
 ## Installation
-###Heroku
+
+### Heroku
 The service is installed on Heroku.
 PostgreSQL DB is installed on Heroku.
 
 url: https://d2d-backend-gungor.herokuapp.com 
 
-###Docker
+### Docker
 
 Using the commands below app can run in your local container
 
@@ -186,7 +192,7 @@ docker run -p 8080:8080 -e "SPRING_PROFILES_ACTIVE=test" -t  d2d/backend-gungor
 
 url: http://localhost:8080
 
-PostgreSQL DB installed on Heroku can be used
+PostgreSQL DB installed on Heroku can be used. 
 Alternatively you can your own PostgreSQL DB by providing connection to the run command below
 ```bash
 docker run -p 8080:8080 -e "SPRING_PROFILES_ACTIVE=test" -e "JAVA_OPTS=-Dspring.datasource.url=jdbc:postgresql://host.docker.internal:5432/postgres -Dspring.datasource.username=postgres -Dspring.datasource.password=123456 -Dspring.jpa.properties.hibernate.default_schema=public" -t  d2d/backend-gungor

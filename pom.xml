@@ -10,9 +10,9 @@
 	</parent>
 
 	<groupId>io.d2d</groupId>
-	<artifactId>chservice</artifactId>
+	<artifactId>d2d-challenge-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>chservice</name>
+	<name>d2d-challenge-service</name>
 	<description>D2D Challenge Service</description>
 
 	<properties>
