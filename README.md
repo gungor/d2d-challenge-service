@@ -182,18 +182,22 @@ url: https://d2d-backend-gungor.herokuapp.com
 
 ### Docker
 
-Using the commands below app can run in your local container
-
+Using the commands below, app can run in your local container.
+Application can be reached from this url: http://localhost:8080
 ```bash
-cd /pathto-projectfolder
+cd d2d-challenge-service
 docker build -t d2d/backend-gungor .
 docker run -p 8080:8080 -e "SPRING_PROFILES_ACTIVE=test" -t  d2d/backend-gungor
 ```
-
-url: http://localhost:8080
 
 PostgreSQL DB installed on Heroku can be used. 
 Alternatively you can your own PostgreSQL DB by providing connection to the run command below
 ```bash
 docker run -p 8080:8080 -e "SPRING_PROFILES_ACTIVE=test" -e "JAVA_OPTS=-Dspring.datasource.url=jdbc:postgresql://host.docker.internal:5432/postgres -Dspring.datasource.username=postgres -Dspring.datasource.password=123456 -Dspring.jpa.properties.hibernate.default_schema=public" -t  d2d/backend-gungor
+```
+
+## Test
+Ensure that JAVA_HOME environment variable set to min JDK 11
+```bash
+mvn clean test
 ```
