@@ -171,7 +171,7 @@ Response example : HTTP 500 / Internal server error
 { "errorDescription" : "error message will be here" }
 ```
 
-### Vehicle Query
+### Reset
 
 `GET /reset`
 For testing purposes it truncates all tables so that a fresh test can begin.
