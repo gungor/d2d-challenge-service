@@ -7,10 +7,10 @@ security:
 
 spring:
   datasource:
-    url : jdbc:postgresql://ec2-54-204-26-236.compute-1.amazonaws.com:5432/ddqjvsensfrn0c
+    url : jdbc:postgresql://ec2-34-234-185-150.compute-1.amazonaws.com:5432/da0kas41gsvded
     driverClassName: org.postgresql.Driver
-    username: ufqoothwnjonkj
-    password: 800b53e72a0a2b7103d6dab0045d09b1187fa062a48ab2e8b4d47b6ee0b97605
+    username: mylmqmxuqbgomp
+    password: 25cf656a629c090192a9be5b5e16d8420f787d7a44959e795617a8c5645cebe6
   jpa:
     generate-ddl: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
