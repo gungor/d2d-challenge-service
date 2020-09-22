@@ -192,8 +192,11 @@ docker run -p 8080:8080 -e "SPRING_PROFILES_ACTIVE=test" -t  d2d/backend-gungor
 
 PostgreSQL DB installed on Heroku can be used. 
 Alternatively you can your own PostgreSQL DB by providing connection to the run command below
+
+* If posgtresql hostname (<postgre-host>) contains 'localhost' or '127.0.0.1' replace it with 'host.docker.internal'
+
 ```bash
-docker run -p 8080:8080 -e "SPRING_PROFILES_ACTIVE=test" -e "JAVA_OPTS=-Dspring.datasource.url=jdbc:postgresql://host.docker.internal:5432/postgres -Dspring.datasource.username=postgres -Dspring.datasource.password=123456 -Dspring.jpa.properties.hibernate.default_schema=public" -t  d2d/backend-gungor
+docker run -p 8080:8080 -e "SPRING_PROFILES_ACTIVE=test" -e "JAVA_OPTS=-Dspring.datasource.url=jdbc:postgresql://<postgre-host>:<postgre-port>/<postgre-databasename> -Dspring.datasource.username=<postgre-user> -Dspring.datasource.password=<postgre-password> -Dspring.jpa.properties.hibernate.default_schema=<postgre-schema>" -t  d2d/backend-gungor
 ```
 
 ## Test
